@@ -2,6 +2,7 @@ import { Inter, JetBrains_Mono } from 'next/font/google';
 import { Modal } from '../components/Modal';
 import { ThemeToggle } from '../components/ThemeToggle';
 import { MobileMenuProvider } from '../components/MobileMenuProvider';
+import { LoadingWrapper } from '../components/LoadingWrapper';
 import './globals.css';
 
 const inter = Inter({
@@ -54,18 +55,20 @@ export default function RootLayout({
       suppressHydrationWarning
     >
       <body className={`${inter.className} antialiased`}>
-        <MobileMenuProvider>
-          <div className="min-h-screen relative overflow-hidden" suppressHydrationWarning>
-            <div className="absolute inset-0 bg-neutral-50 dark:bg-neutral-100" suppressHydrationWarning></div>
-            <div className="fixed top-4 right-4 z-50">
-              <ThemeToggle />
+        <LoadingWrapper>
+          <MobileMenuProvider>
+            <div className="min-h-screen relative overflow-hidden" suppressHydrationWarning>
+              <div className="absolute inset-0 bg-neutral-50 dark:bg-neutral-100" suppressHydrationWarning></div>
+              <div className="fixed top-4 right-4 z-50">
+                <ThemeToggle />
+              </div>
+              <div className="relative z-10">
+                {children}
+              </div>
             </div>
-            <div className="relative z-10">
-              {children}
-            </div>
-          </div>
-          <Modal />
-        </MobileMenuProvider>
+            <Modal />
+          </MobileMenuProvider>
+        </LoadingWrapper>
       </body>
     </html>
   );
