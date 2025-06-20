@@ -40,6 +40,27 @@ npm run dev
 - Check off completed tasks
 - Edit or delete tasks as needed
 
+## Technologies
+
+This project was built using:
+
+**Frontend:**
+- Next.js
+- React
+- TypeScript
+- Tailwind CSS
+- Typed.js
+
+**Backend:**
+- Next.js API Routes
+- OpenAI API
+
+**Architecture:**
+- React Hooks
+- Services Pattern
+- Local Storage
+- Responsive Design
+
 ---
 
 Made with 💕 in Ukraine 🐈
